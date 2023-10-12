@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pay</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+        <!-- <form method="post"> -->
+        <form  method="post" enctype="multipart/form-data">
+
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name"><br>
+
+
+            <label for="name">Card :</label>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="price">Date :</label>
+            <input type="text" id="price" name="price"><br>
+
+        
+
+            <input type="submit" value="Pay">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

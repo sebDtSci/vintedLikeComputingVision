@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLog.css') }}">
+</head>
+<body>
+    <div class="add-button">
+        <a href="/index">Home </a>
+    </div>
+    <div class="container">
+        <h1>Your Cart</h1>
+    
+        <ul class="products">
+            {% for product in products %}
+        <div class="product-card">
+            <h2><a href="{{ url_for('product_detail', product_id=product['id']) }}">{{ product['name'] }}</a></h2>
+            <p>Prix : {{ product['price'] }}€</p>
+            <p>Vendeur : {{ product['client'] }}</p>
+                {% if product.get('img') %}
+                    <!-- <img src="{{ url_for('static', filename='uploads/' + product.get('img')) }}" alt="{{ product['img'] }}" width="200"> -->
+                    <img src="{{ url_for('static', filename='uploads/' + product.get('img')) }}" width="200">
+                {% endif %}
+    
+        </div>
+            {% endfor %}
+        </ul>
+
+        <div class="add-button">
+            <a href="{{ url_for('pay') }}"> Pay</a>
+        </div>
+    </div>
+
+</body>
+</html>

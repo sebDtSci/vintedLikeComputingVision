@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLog.css') }}">
+</head>
+<body>
+    <div class="add-button">
+        <a href="/show_cart">Mon Panier </a>
+        <a href="/index">Home </a>
+    </div>
+
+    <div class="container">
+        <h1>Register</h1>
+
+        <form action="/register" method="post" class="login-form">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" class="form-input" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="form-input" required>
+            <br>
+
+            <input type="submit" value="Register" class="submit-button">
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+
+    <h1>Register</h1>
+
+    <form action="/register" method="post">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html> -->
