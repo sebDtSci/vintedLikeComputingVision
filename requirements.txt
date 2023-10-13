@@ -16,7 +16,7 @@ debugpy==1.8.0
 decorator==5.1.1
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.0/en_core_web_sm-3.7.0-py3-none-any.whl#sha256=6215d71a3212690e9aec49408a27e3fe6ad7cd6c715476e93d70dc784041e93e
 executing==2.0.0
-Flask==3.0.0
+Flask==2
 Flask-Login==0.6.2
 idna==3.4
 ipykernel==6.25.2
