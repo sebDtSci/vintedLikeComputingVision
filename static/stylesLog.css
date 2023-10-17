@@ -31,8 +31,9 @@ h1 {
 }
 
 .submit-button {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #a3dfca;
+    /* color: #fff; */
+    color: #e73491;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;

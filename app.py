@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
-from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
-import csv
-from werkzeug.utils import secure_filename
+import random
 import os
 import uuid
-import random
+from flask import Flask, render_template, request, redirect, url_for
+from flask_login import LoginManager, UserMixin, login_required, login_user, current_user #logout_user
+import csv
+from werkzeug.utils import secure_filename
+
+
 from model import nlpNER
 
 
