@@ -1,0 +1,2 @@
+model/rnn/array_X.npy filter=lfs diff=lfs merge=lfs -text
+model/rnn/my_model.h5 filter=lfs diff=lfs merge=lfs -text
