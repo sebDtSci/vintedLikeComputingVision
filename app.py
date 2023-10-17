@@ -1,9 +1,11 @@
-import random
+# import random
 import os
 import uuid
-from flask import Flask, render_template, request, redirect, url_for
-from flask_login import LoginManager, UserMixin, login_required, login_user, current_user #logout_user
 import csv
+from flask_login import LoginManager, UserMixin, login_required, login_user\
+    , current_user #logout_user
+from flask import Flask, render_template, request, redirect, url_for
+
 from werkzeug.utils import secure_filename
 
 
@@ -21,6 +23,11 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 class User(UserMixin):
+    """_summary_
+
+    Args:
+        UserMixin (_type_): _description_
+    """
     pass
 
 if not os.path.exists(UPLOAD_FOLDER):
@@ -29,8 +36,13 @@ if not os.path.exists(UPLOAD_FOLDER):
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def read_products_from_csv():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
     products = []
-    with open('products.csv', 'r') as file:
+    with open(file = 'products.csv', mode = 'r', encoding =str) as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             products.append(row)
@@ -48,14 +60,14 @@ def user_loader(email):
     return user
 
 def write_client_to_csv(email, password):
-    with open('client.csv', 'a', newline='') as file:
+    with open(file = 'client.csv', mode = 'a', encoding =str, newline='') as file:
         fieldnames = ['id', 'password']
         csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
         csv_writer.writerow({'id': email, 'password': password})
 
 def read_clients_from_csv():
     clients = []
-    with open('client.csv', 'r') as file:
+    with open(file = 'client.csv', mode = 'r', encoding =str) as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             clients.append(row)
