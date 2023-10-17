@@ -1,4 +1,3 @@
-# import random
 import os
 import uuid
 import csv
