@@ -2,5 +2,5 @@ app-env/
 *.csv
 *.xlsx
 *.npy
-model/rnn/array_X.npy
+/model/rnn/array_X.npy
 model/rnn/my_model.h5

@@ -13,8 +13,9 @@
     </header>
     <div class="container">
         <h1>{{ product.name }}</h1>
-        <p>Prix : {{ product.price }}€</p>
-        <p>Vendeur : {{ product['client'] }}</p>
+        <p>Price : {{ product.price }}€</p>
+        <p>Seller : {{ product['client'] }}</p>
+        <p>State : {{ product['state'] }}</p>
 
             {% if product.get('img') %}
                 <!-- <img src="{{ url_for('static', filename='uploads/' + product.get('img')) }}" alt="{{ product['img'] }}" width="200"> -->

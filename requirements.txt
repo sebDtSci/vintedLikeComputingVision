@@ -76,4 +76,5 @@ urllib3==2.0.6
 wasabi==1.1.2
 wcwidth==0.2.8
 weasel==0.3.2
-Werkzeug==2.3.7
+# Werkzeug==2.3.7
+Werkzeug==2.2.2

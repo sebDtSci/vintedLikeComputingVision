@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
 
-from model import nlpNER
+from model import nlpNER,modelReco
 
 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -132,13 +132,13 @@ def index():
 
 
 ##-------------------------------------------------------------------------------
-def write_product_to_csv(name, price, filename,comm, brand,key):
+def write_product_to_csv(name, price, filename,comm, brand,key,state):
     with open('products.csv', 'a', newline='') as file:
-        fieldnames = ['id', 'name', 'price','client','img', 'comm', 'brand','key']
+        fieldnames = ['id', 'name', 'price','client','img', 'comm', 'brand','key','state']
         csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
         # Générer un ID aléatoire avec uuid
         product_id = str(uuid.uuid4())
-        csv_writer.writerow({'id': product_id, 'name': name, 'price': price, 'client':current_user.id, 'img':filename,'comm':comm, 'brand':brand,'key':key})
+        csv_writer.writerow({'id': product_id, 'name': name, 'price': price, 'client':current_user.id, 'img':filename,'comm':comm, 'brand':brand,'key':key, 'state':state})
 
 @app.route('/add_product', methods=['GET', 'POST'])
 def add_product():
@@ -148,12 +148,16 @@ def add_product():
         comm = request.form['comm']
 
         brand,key = nlpNER.extOrg(comm)
-        
 
         file = request.files['product_image']
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        write_product_to_csv(name, price, filename,comm,brand,key)
+        print(filename)
+
+        state = modelReco.state('static/uploads/' + filename)
+        print(state)
+
+        write_product_to_csv(name, price, filename,comm,brand,key,state)
         return redirect(url_for('index'))
     return render_template('add_product.html')
 
