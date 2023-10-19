@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STAILE - Se connecter</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    <!-- You may need another stylesheet for the login styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLogin.css') }}">
-</head>
-<body>
-
-<div class="login-container">
-    <h1>STAILE</h1>
-
-    <form action="{{ url_for('login') }}" method="post">
-        <input type="email" name="email" placeholder="Adresse e-mail" required>
-        <input type="password" name="password" placeholder="Mot de passe" required>
-        
-        <button type="submit">se connecter</button>
-    </form>
-
-    <a href="{{ url_for('register') }}">Créer un compte</a>
-    <a href="{{ url_for('register') }}">Mot de passe oublié?</a>
-</div>
-
-</body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
     <title>Connexion</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLog.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <hader class="logo">
-        <h1 >STAILE</h1>
-        
+    <hader >
+        <h1 class="logo">STAILE</h1>
     </hader>
     <div class="container">
-        <h1>Page de connexion</h1>
+        <h1>Connexion page</h1>
         <form method="post" class="login-form">
-            <label for="email">Identifiant:</label>
+            <label for="email">Identifier:</label>
             <input type="text" id="email" name="email" class="form-input" required>
 
-            <label for="password">Mot de passe:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" class="form-input" required>
 
             <input type="submit" value="Connexion" class="submit-button">
         </form>
 
         <div>
-            <a href="{{ url_for('register') }}">Créer un compte</a>
+            <a href="{{ url_for('register') }}">Sign up</a>
         </div>
         <p></p>
         <div>
             <a href="{{ url_for('register') }}">forgotten password</a>
-        </div> -->
+        </div>
 
-        <!-- <h1>Produits</h1>
+    <h1>Products</h1>
         <div class="products">
             {% if products %}
                 {% for product in products %}
                 <div class="product-card">
                     <h2>{{ product['name'] }}</h2>
-                    <p>Prix : {{ product['price'] }}€</p>
-                    <p>Vendeur : {{ product['client'] }}</p>
+                    <p>Price : {{ product['price'] }}€</p>
+                    <p>Seller : {{ product['client'] }}</p>
                     {% if product.get('img') %}
                         <img src="{{ url_for('static', filename='uploads/' + product.get('img')) }}" width="200">
                     {% endif %}
@@ -76,4 +46,4 @@
         </div>
     </div>
 </body>
-</html> -->
+</html>

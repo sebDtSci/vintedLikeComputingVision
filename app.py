@@ -47,6 +47,19 @@ def read_products_from_csv():
             products.append(row)
     return products
 
+def user_from_csv():
+    """_summary_
+
+    Returns:
+        _type_: _description_
+    """
+    inf = []
+    with open(file = 'client.csv', mode = 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            inf.append(row)
+    return inf
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -149,7 +162,6 @@ def add_product():
 @app.route('/product/<string:product_id>', methods=['GET'])
 def product_detail(product_id):
     products = read_products_from_csv()
-    # product = next((item for item in products if int(item['id']) == product_id), None)
     product = next((item for item in products if item['id'] == product_id), None)
 
     if product:
@@ -233,6 +245,54 @@ def add_to_cart():
         writer.writerow({'client': current_user.id, 'id': product_id})
 
     return redirect(url_for('index'))
+
+@app.route('/mesinfos', methods=['GET','POST'])
+def mesinfos():
+    infs = read_clients_from_csv()
+    for i in infs:
+        if i['id'] == str(current_user.id):  # Assurez-vous que les types des deux id correspondent
+            # return render_template('mesinfos.html', product=i)  # Retourne les informations si une correspondance est trouvée
+            if request.method == 'POST':
+                    # Update product details based on form data
+                    name = request.form['name']
+                    price = request.form['price']
+
+                    # Update the product in the CSV file
+                    for item in infs:
+                        if item['id'] == current_user.id:
+                            item['password'] = price
+                            item['id'] = name
+
+                    # Write the updated product list back to the CSV file
+                    with open('client.csv', 'w', newline='') as file:
+                        fieldnames = ['id', 'password']
+                        csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+                        csv_writer.writeheader()
+                        csv_writer.writerows(infs)
+
+                    
+                    products = read_products_from_csv()
+        # Update the product in the CSV file
+                    for item in products:
+                        if item['client'] == current_user.id:
+                            item['client'] = name
+                
+                
+                        # Write the updated product list back to the CSV file
+                    with open('products.csv', 'w', newline='') as file:
+                        fieldnames = ['id', 'name', 'price', 'client', 'img']
+                        csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
+                        csv_writer.writeheader()
+                        csv_writer.writerows(products)
+                    
+                    # current_user.id = name
+
+                    return redirect(url_for('index'))
+            # print(i)
+            return render_template('mesinfos.html', product=i) 
+
+
+
 
 @app.route('/show_cart')
 def show_cart():

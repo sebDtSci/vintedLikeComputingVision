@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+
 
 h1 {
     color: #333;
@@ -16,7 +11,7 @@ h1 {
 
 label {
     display: inline-block;
-    width: 100px;
+    /* width: 100px; */
     font-weight: bold;
 }
 
@@ -29,7 +24,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: #a3dfca;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -38,7 +33,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #a3dfca;
 }
 
 
@@ -57,7 +52,7 @@ input[type="submit"]:hover {
 
 .add-button a {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #a3dfca;
     color: #fff;
     padding: 10px 20px;
     margin-top: 20px;
@@ -66,52 +61,40 @@ input[type="submit"]:hover {
 }
 
 .add-button a:hover {
-    background-color: #0056b3;
-}
-/* ... vos autres styles ... */
-
-.container {
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 4px;
+    background-color: #a3dfca;
 }
 
 .login-form {
+    text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.form-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+
+/* Paragraphs */
+.container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    /* display: inline-block; Important pour faire en sorte que la bordure entoure le texte */
+    /* border: 1px solid #ccc; Ajoute une bordure */
+    /* padding: 5px; Espace entre le texte et la bordure */
+    /* margin: 5px; *//*Espace autour du paragraphe */
 }
 
-.submit-button {
-    background-color:#a3dfca; /*	 #007bff;*/
-    /* color: #fff; */
-    color: #e73491;
+/* Edit and Delete Buttons */
+.edit-button, .delete-button {
+    background-color: #f2f2f2;
     padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
 }
 
-.submit-button:hover {
-    background-color: #0056b3;
-}
-
-.logo h1 {
-    background-color:#a3dfca;
-    padding: 20px; /* Ajoute un espace autour du texte */
-    border: 2px solid #e73491; /* Ajoute une bordure */
-    border-radius: 10px; /* Arrondit les coins */
-    color: #e73491;
-    display: inline-block; /* Change le comportement par défaut de l'élément de bloc */
-    align-items: center;
-    
+.edit-button:hover, .delete-button:hover {
+    background-color: #ccc;
 }
