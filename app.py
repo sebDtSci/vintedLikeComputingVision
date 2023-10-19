@@ -41,7 +41,7 @@ def read_products_from_csv():
         _type_: _description_
     """
     products = []
-    with open(file = 'products.csv', mode = 'r', encoding =str) as file:
+    with open(file = 'products.csv', mode = 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             products.append(row)
@@ -59,14 +59,14 @@ def user_loader(email):
     return user
 
 def write_client_to_csv(email, password):
-    with open(file = 'client.csv', mode = 'a', encoding =str, newline='') as file:
+    with open(file = 'client.csv', mode = 'a', newline='') as file:
         fieldnames = ['id', 'password']
         csv_writer = csv.DictWriter(file, fieldnames=fieldnames)
         csv_writer.writerow({'id': email, 'password': password})
 
 def read_clients_from_csv():
     clients = []
-    with open(file = 'client.csv', mode = 'r', encoding =str) as file:
+    with open(file = 'client.csv', mode = 'r') as file:
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             clients.append(row)

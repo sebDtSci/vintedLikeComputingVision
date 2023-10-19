@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Connexion</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLog.css') }}">
+    <title>STAILE - Se connecter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- You may need another stylesheet for the login styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLogin.css') }}">
 </head>
 <body>
+
+<div class="login-container">
+    <h1>STAILE</h1>
+
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="email" name="email" placeholder="Adresse e-mail" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        
+        <button type="submit">se connecter</button>
+    </form>
+
+    <a href="{{ url_for('register') }}">Créer un compte</a>
+    <a href="{{ url_for('register') }}">Mot de passe oublié?</a>
+</div>
+
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Connexion</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesLog.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <hader class="logo">
+        <h1 >STAILE</h1>
+        
+    </hader>
     <div class="container">
         <h1>Page de connexion</h1>
         <form method="post" class="login-form">
@@ -23,9 +57,9 @@
         <p></p>
         <div>
             <a href="{{ url_for('register') }}">forgotten password</a>
-        </div>
+        </div> -->
 
-        <h1>Produits</h1>
+        <!-- <h1>Produits</h1>
         <div class="products">
             {% if products %}
                 {% for product in products %}
@@ -41,54 +75,5 @@
             {% endif %}
         </div>
     </div>
-</body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>Connexion</title>
-</head>
-<body>
-    <h1>Page de connexion</h1>
-
-    <form method="post" class="login-form">
-        <label for="username">Identifiant:</label>
-        <input type="text" id="email" name="email" class="form-input" required>
-
-
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" name="password" class="form-input" required>
-
-        <input type="submit" value="Connexion" class="submit-button">
-    </form>
-
-    <div>
-        <a href="{{ url_for('register') }}">Créer un compte</a>
-    </div>
-
-<div class="container">
-    
-    <h1>Produits</h1>
-    
-    <div class="products">
-        {% if products %}
-            {% for product in products %}
-            <div>
-                <h2>{{ product['name'] }}</h2>
-                <p>Prix : {{ product['price'] }}€</p>
-                <p>Vendeur : {{ product['client'] }}</p>
-                    {% if product.get('img') %}
-                       <img src="{{ url_for('static', filename='uploads/' + product.get('img')) }}" width="200">
-                 {% endif %}
-        </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-
-</div>
-
 </body>
 </html> -->
