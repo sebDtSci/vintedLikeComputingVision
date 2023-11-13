@@ -1,7 +1,6 @@
-id,name,price,client,img,comm,brand,key,state
-708c77a1-9e16-48e4-89a0-91d90ee359ca,zadzd,12,seb2,1602723597.jpeg,new Nike,['Nike'],,bon etat
-16478a9d-b9ae-45a9-b1b9-cfa8bef9ee6d,sebDtSci,45,seb2,1664263706.jpeg,"Video game Ghost recon from Ubisoft for Xbox 360, very good state.",['Ubisoft'],ghost,bon etat
-0a064aea-d2a8-41b2-9d27-d98a50e1bb51,Pop Pulsion,20,seb2,telechargement.jpeg,new Nike,['Nike'],,bon etat
-1f78de27-0f1d-47c2-af25-1bf6653c912d,Pop Pulsion,20,seb2,telechargement.jpeg,new Nike,['Nike'],,bon etat
-b1a3b7e8-0107-489c-962e-0f89e4ef9b48,fghjk,45,seb2,telechargement.jpeg,"Video game Ghost recon from Ubisoft for Xbox 360, very good state.",['Ubisoft'],ghost,bon etat
-e2641b08-0cf2-4f31-aade-8aed355b3fa5,Pop Pulsion,12,seb2,telechargement_1.jpeg,new Nike,['Nike'],,bon etat
+id,name,price,client,img
+dfbb87c1-c096-4af8-a158-85dbf28d3990,Nike 300,45,seb,chaBof.jpeg,"New Nike 300 for runners ! Besides being good for your health, running is also a great physical activity that provides a bridge to make some new friends and build strong relationships. Running is also a great way to set a goal and crush it. If you need some purpose in your life, now’s the time to lace up and work towards your goal. Also, running is free. You can run anywhere, and it’s one of those exercises that don’t need any special equipment or a gym to get started.",['Nike'],"new
+nike",bon etat
+87da9f28-9651-4324-a40b-cb81117f4489,adidace,20,seb,chauNeuv.jpeg,WOuha,[],,satisfaisant
+4cc027d3-eed2-459b-be49-ac85f46864de,Pumha,34,seb,cb.jpeg,ok,[],,bon etat
+601c3145-ff12-4879-b30a-1d68b975f11c,Nike 4000,20,frank,cb.jpeg,New Nike 300 for runners !,['Nike'],,bon etat
