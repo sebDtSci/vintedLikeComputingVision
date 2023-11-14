@@ -8,6 +8,11 @@
   "routes": [{
     "src": "/(.*)",
     "dest": "app.py"
-  }]
+  }],
+  ],
+  "ignore": [
+    "tests/",
+    "*.md"
+  ]
 }
 
