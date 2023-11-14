@@ -8,12 +8,6 @@
   "routes": [{
     "src": "/(.*)",
     "dest": "app.py"
-  }],
-  "ignore": [
-    "model/rnn/",
-    "model/modelReco.py",
-    "requirementsMac.txt",
-    "requirementsPc.txt"
-  ]
+  }]
 }
 
