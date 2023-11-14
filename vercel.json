@@ -9,10 +9,11 @@
     "src": "/(.*)",
     "dest": "app.py"
   }],
-  ],
   "ignore": [
-    "tests/",
-    "*.md"
+    "model/rnn/",
+    "model/modelReco.py",
+    "requirementsMac.txt",
+    "requirementsPc.txt"
   ]
 }
 
